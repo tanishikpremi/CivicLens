@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CivicLens | Report Issue</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#0e6030",
+              "on-primary-container": "#005f28",
+              "on-background": "#26312b",
+              "error": "#b02500",
+              "tertiary": "#1b6937",
+              "primary-fixed-dim": "#5bf083",
+              "background": "#edfaf1",
+              "surface": "#edfaf1",
+              "inverse-surface": "#06100c",
+              "inverse-primary": "#6bff8f",
+              "on-tertiary-fixed": "#004c22",
+              "secondary-fixed": "#6dfe9c",
+              "primary": "#006a2d",
+              "secondary-dim": "#005c2c",
+              "primary-fixed": "#6bff8f",
+              "secondary-container": "#6dfe9c",
+              "surface-container": "#dcece2",
+              "on-error-container": "#520c00",
+              "on-tertiary-fixed-variant": "#1d6b39",
+              "outline-variant": "#a3b0a8",
+              "primary-dim": "#005d26",
+              "secondary-fixed-dim": "#5def8f",
+              "surface-container-low": "#e6f4eb",
+              "outline": "#6d7a73",
+              "on-primary-fixed-variant": "#006a2d",
+              "tertiary-container": "#a9f7b7",
+              "on-secondary": "#cdffd4",
+              "on-primary-fixed": "#004a1d",
+              "surface-dim": "#c5d9cd",
+              "on-secondary-fixed-variant": "#006a34",
+              "tertiary-fixed-dim": "#9be9aa",
+              "tertiary-dim": "#075c2c",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ceffd0",
+              "primary-container": "#6bff8f",
+              "on-surface": "#26312b",
+              "surface-variant": "#cfe1d6",
+              "secondary": "#006a34",
+              "tertiary-fixed": "#a9f7b7",
+              "on-error": "#ffefec",
+              "on-surface-variant": "#525e58",
+              "on-tertiary": "#cdffd3",
+              "surface-container-highest": "#cfe1d6",
+              "on-secondary-fixed": "#004a22",
+              "inverse-on-surface": "#93a098",
+              "on-secondary-container": "#005f2e",
+              "surface-tint": "#006a2d",
+              "error-dim": "#b92902",
+              "surface-container-high": "#d5e7dc",
+              "surface-bright": "#edfaf1",
+              "error-container": "#f95630"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body { font-family: 'Manrope', sans-serif; }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+      }
+      .bg-organic-glow {
+        background: radial-gradient(circle at 10% 20%, rgba(107, 255, 143, 0.08) 0%, transparent 50%),
+                    radial-gradient(circle at 90% 80%, rgba(0, 106, 45, 0.05) 0%, transparent 50%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32 bg-organic-glow">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-emerald-950/70 backdrop-blur-xl flex items-center justify-between px-6 h-16 w-full shadow-sm dark:shadow-none">
+<div class="flex items-center gap-4">
+<button class="text-emerald-700 dark:text-emerald-400 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/50 transition-colors active:scale-95 duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] font-semibold tracking-tight text-emerald-900 dark:text-emerald-50 text-lg">Report Issue</h1>
+</div>
+<div class="text-xl font-extrabold tracking-tighter text-emerald-800 dark:text-emerald-200">CivicLens</div>
+<button class="text-emerald-700 dark:text-emerald-400 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/50 transition-colors active:scale-95 duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto space-y-8">
+<!-- Stepper -->
+<div class="flex justify-center items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-primary shadow-[0_0_12px_rgba(0,106,45,0.4)]"></div>
+<div class="w-20 h-0.5 bg-surface-container rounded-full overflow-hidden">
+<div class="w-1/2 h-full bg-primary"></div>
+</div>
+<div class="w-3 h-3 rounded-full bg-primary shadow-[0_0_12px_rgba(0,106,45,0.4)]"></div>
+<div class="w-20 h-0.5 bg-surface-container rounded-full"></div>
+<div class="w-3 h-3 rounded-full bg-surface-container-highest"></div>
+</div>
+<!-- Image Upload Card -->
+<section class="bg-surface-container-lowest rounded-[28px] p-6 shadow-[0_20px_40px_-12px_rgba(0,106,45,0.06)] group">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-title-sm font-semibold text-on-surface">Visual Evidence</h3>
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary bg-primary-container px-3 py-1 rounded-full">Required</span>
+</div>
+<div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-surface-container-low border-2 border-dashed border-outline-variant/30 flex flex-col items-center justify-center gap-3">
+<img alt="Damaged public infrastructure" class="absolute inset-0 w-full h-full object-cover opacity-80" data-alt="Close up of a deep pothole on an urban asphalt road with green grass growing from cracks in soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcIRU0Uj8xEwa30xXbNHIYViOhgAmFtaawUg799zbsurjt91Th8qqqxmJhEfbetQnG3NDuj3-jcoCdjgKlgFID9U2zYxvk-jbV5sQ62hKT95KKZL8IQHZcYAbJZeYZ9gdoSU98PesSLeLWiZPl9aZ6l7NNQKcxgfPu6qCsyG_i5BmfKoGUH6M6VVgLIFgcN2Q2DpL4-P-NbB9eYoy-M3_C6p-6XkQ0Ju8FmdDCZJdXl-GrTMRFC4eaBXc0eo4p0x3HTagLyOboQZ9C"/>
+<div class="relative z-10 glass-card p-4 rounded-full text-primary shadow-lg">
+<span class="material-symbols-outlined text-3xl" data-icon="add_a_photo">add_a_photo</span>
+</div>
+<p class="relative z-10 text-label-md text-on-surface-variant font-medium">Tap to retake photo</p>
+</div>
+</section>
+<!-- Location Card -->
+<section class="bg-surface-container-lowest rounded-[28px] p-6 shadow-[0_20px_40px_-12px_rgba(0,106,45,0.06)] flex flex-col gap-5">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<h3 class="text-title-sm font-semibold text-on-surface">Precise Location</h3>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+<p class="text-body-lg">Connaught Place, Delhi</p>
+</div>
+</div>
+<button class="bg-surface-container-low hover:bg-surface-container text-primary font-bold text-[11px] uppercase tracking-wider px-5 py-2.5 rounded-full transition-all">
+                    Adjust Pin
+                </button>
+</div>
+<div class="w-full h-40 rounded-2xl overflow-hidden relative grayscale-[0.3] contrast-[0.9]">
+<img alt="Map view" class="w-full h-full object-cover" data-alt="Stylized top down map of urban streets with soft green and beige tones representing parks and buildings" data-location="Delhi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-tNYGjm2u9oJVY80LGQRbAJxp9pv5xIRHkFUg4ydDjwCaHCKWgJfhpu35KFAG0QAF9H0Y95LyLMtyuES-8IadYPUsm_D8jfYf1FwAbfOBKhcwxQZ9djPa5EZvbvPrSbWHGd2f_bWcze1cgIxZjVQpmJ7b45hOT2_fwLmIu5-cr4T9UkDK0eSPh40ij2I_KBeNEbbMi0cwxG1wOZEwNRwbNtXaJ_oNVs0JPFfy4H6NP9ljHLN-HAF3zd19uRUNDd3DYXS1fDasL7-M"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="relative">
+<div class="absolute -inset-4 bg-primary/20 rounded-full animate-pulse"></div>
+<span class="material-symbols-outlined text-primary text-4xl drop-shadow-lg" data-icon="location_pin" style="font-variation-settings: 'FILL' 1;">location_pin</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Details & Inputs -->
+<section class="space-y-6">
+<div class="space-y-3">
+<label class="text-label-md font-bold uppercase tracking-widest text-on-surface-variant px-1">Issue Category</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border-none rounded-2xl p-4 text-on-surface focus:ring-2 focus:ring-primary/20 appearance-none font-medium">
+<option>Road &amp; Pavement Damage</option>
+<option>Sanitation &amp; Waste</option>
+<option>Street Lighting</option>
+<option>Public Greenery</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-outline" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="space-y-4">
+<label class="text-label-md font-bold uppercase tracking-widest text-on-surface-variant px-1">Severity Level</label>
+<div class="grid grid-cols-3 gap-3">
+<button class="bg-surface-container-lowest border-2 border-primary/20 text-primary p-3 rounded-full flex flex-col items-center gap-1 transition-all hover:bg-primary-container/30">
+<span class="text-[10px] font-extrabold uppercase tracking-tighter">Low</span>
+</button>
+<button class="bg-amber-50 text-amber-700 p-3 rounded-full flex flex-col items-center gap-1 shadow-sm border border-amber-100">
+<span class="text-[10px] font-extrabold uppercase tracking-tighter">Medium</span>
+</button>
+<button class="bg-error-container/10 text-error p-3 rounded-full flex flex-col items-center gap-1 border border-error/10">
+<span class="text-[10px] font-extrabold uppercase tracking-tighter">High</span>
+</button>
+</div>
+</div>
+<div class="space-y-3">
+<label class="text-label-md font-bold uppercase tracking-widest text-on-surface-variant px-1">AI Intelligence Tags</label>
+<div class="flex flex-wrap gap-2">
+<div class="flex items-center gap-2 bg-primary-container/40 text-on-primary-container px-4 py-2 rounded-full text-sm font-semibold">
+<span class="material-symbols-outlined text-sm" data-icon="auto_awesome">auto_awesome</span>
+                        #pothole
+                    </div>
+<div class="flex items-center gap-2 bg-primary-container/40 text-on-primary-container px-4 py-2 rounded-full text-sm font-semibold">
+<span class="material-symbols-outlined text-sm" data-icon="auto_awesome">auto_awesome</span>
+                        #urgent
+                    </div>
+<div class="flex items-center gap-2 bg-surface-container text-on-surface-variant px-4 py-2 rounded-full text-sm font-semibold italic">
+                        Detecting more...
+                    </div>
+</div>
+</div>
+<div class="space-y-3">
+<label class="text-label-md font-bold uppercase tracking-widest text-on-surface-variant px-1">Description</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-2xl p-4 text-on-surface focus:ring-2 focus:ring-primary/20 placeholder:text-outline font-medium resize-none" placeholder="Describe the issue in a few words..." rows="3"></textarea>
+</div>
+</section>
+</main>
+<!-- BottomNavBar as CTA Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center gap-4 bg-emerald-50/80 dark:bg-emerald-950/80 backdrop-blur-2xl rounded-t-[3rem] px-8 pt-4 pb-8 shadow-[0_-20px_40px_-12px_rgba(0,106,45,0.08)]">
+<button class="flex flex-row items-center justify-center gap-2 text-emerald-800 dark:text-emerald-200 px-6 py-4 rounded-full bg-white/50 dark:bg-emerald-900/50 hover:opacity-90 transition-opacity active:scale-[0.97] duration-200">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest">Discard</span>
+</button>
+<button class="flex-1 flex flex-row items-center justify-center gap-2 bg-gradient-to-br from-[#6bff8f] to-[#006a2d] text-white rounded-full px-8 py-4 shadow-lg shadow-emerald-500/20 hover:opacity-90 transition-opacity active:scale-[0.97] duration-200">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest">Submit Report</span>
+</button>
+</nav>
+</body></html>

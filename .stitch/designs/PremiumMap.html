@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CivicLens | Map Dashboard</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-high": "#deebe3",
+              "tertiary-fixed": "#7ffc97",
+              "on-primary-fixed-variant": "#005321",
+              "surface-container-low": "#eaf7ee",
+              "surface-tint": "#006e2f",
+              "secondary-container": "#6dfe9c",
+              "surface": "#f0fdf4",
+              "on-secondary-fixed": "#00210c",
+              "on-surface-variant": "#3d4a3d",
+              "error-container": "#ffdad6",
+              "on-error": "#ffffff",
+              "on-background": "#131e19",
+              "surface-variant": "#d9e6dd",
+              "surface-dim": "#d0ddd5",
+              "outline": "#6d7b6c",
+              "on-tertiary-fixed-variant": "#005320",
+              "tertiary-container": "#44c365",
+              "inverse-surface": "#27332d",
+              "on-error-container": "#93000a",
+              "tertiary-fixed-dim": "#62df7d",
+              "primary-fixed": "#6bff8f",
+              "surface-bright": "#f0fdf4",
+              "surface-container-highest": "#d9e6dd",
+              "primary": "#006e2f",
+              "tertiary": "#006e2d",
+              "on-primary-container": "#004b1e",
+              "on-primary": "#ffffff",
+              "background": "#f0fdf4",
+              "surface-container": "#e4f1e8",
+              "on-surface": "#131e19",
+              "on-secondary-fixed-variant": "#005227",
+              "inverse-primary": "#4ae176",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed": "#6dfe9c",
+              "secondary-fixed-dim": "#4de082",
+              "on-tertiary-fixed": "#002109",
+              "inverse-on-surface": "#e7f4eb",
+              "on-primary-fixed": "#002109",
+              "primary-fixed-dim": "#4ae176",
+              "on-secondary": "#ffffff",
+              "secondary": "#006d36",
+              "error": "#ba1a1a",
+              "outline-variant": "#bccbb9",
+              "on-tertiary-container": "#004b1d",
+              "on-secondary-container": "#007439",
+              "primary-container": "#22c55e"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #6DFE9C 0%, #22C55E 100%);
+        }
+        .atmospheric-shadow {
+            box-shadow: 0 20px 40px -10px rgba(34, 197, 94, 0.12);
+        }
+        .glass-panel {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface overflow-hidden">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 py-4 bg-white/80 dark:bg-emerald-950/80 backdrop-blur-xl shadow-sm">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="professional headshot of a person with friendly expression in soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_gMZROGzSW3Y3qSRTf8VdVoYP6TpDUtKHE60sKau6UxVvgeWyiHTByNe2mC_BGHDa9wepC8yloIP1BK5wrR0qvWhsQ6Ms6v2aGTEx6a0-tWLaevI3CmBXFApRxsEQKt5_m9DInguPN_89az4rtdLH7TO9GuoFlQ09o0wXiM0SB5NKQfkC_39_kOOxC0DyR-WFa00LaED-P2_hZxliiLUsLi4g-zrAkRdXpqFgfSIF98aRYN8KM368588Wsz8Lkb4oQqvUdGAHaKWF"/>
+</div>
+<h1 class="text-2xl font-bold tracking-tight text-emerald-700 dark:text-emerald-300 font-manrope">CivicLens</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-emerald-700 dark:text-emerald-300 font-bold transition-all hover:opacity-80 font-manrope" href="#">Map</a>
+<a class="text-emerald-900/60 dark:text-emerald-100/60 transition-all hover:text-emerald-700 font-manrope" href="#">Feed</a>
+<a class="text-emerald-900/60 dark:text-emerald-100/60 transition-all hover:text-emerald-700 font-manrope" href="#">Campaigns</a>
+</nav>
+<button class="p-2 rounded-full hover:bg-emerald-50/50 transition-colors">
+<span class="material-symbols-outlined text-emerald-600" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas Map -->
+<main class="relative w-full h-screen">
+<div class="absolute inset-0 bg-surface-container-low overflow-hidden">
+<!-- Simulated Map Component -->
+<img class="w-full h-full object-cover opacity-40 mix-blend-multiply" data-alt="clean minimalist urban map view with soft pastel green and white terrain and thin grey street lines" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0zg3LZEypt6l9s_t_DjIsDxSjN9X1L86YdBP7fzdwO7o3ju8RBbvym7HSR9yiaKAyxSeSjUOt9qTp7kIlbHpqNSroIeJC59jDXTmphTpEeIQpKekTHGDYnXzw99cTHZQq5wZ9qCRFrsq_LN9-xEDbRFz8eCz6fZWHJ2oE-PT0aftQNLDlC_xM6XTduW1pKEyMW8WrKW23q5qIulGWPoTeGjJAo7cslNfzieEzA2xUhwXQnBLRH01wTWyTyCm8c7EGqG9_g3T9Xvoi"/>
+<!-- Map Overlay Gradient -->
+<div class="absolute inset-0 bg-gradient-to-b from-surface/40 via-transparent to-surface/20"></div>
+<!-- Floating Map Markers -->
+<!-- High Severity (Red) -->
+<div class="absolute top-1/3 left-1/4 group cursor-pointer">
+<div class="relative">
+<div class="absolute inset-0 animate-ping rounded-full bg-[#EF4444] opacity-20"></div>
+<div class="w-10 h-10 rounded-full bg-[#EF4444] flex items-center justify-center text-white shadow-lg shadow-red-500/40 relative z-10 scale-100 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">report</span>
+</div>
+</div>
+</div>
+<!-- Medium Severity (Amber) -->
+<div class="absolute top-1/2 left-2/3 group cursor-pointer">
+<div class="relative">
+<div class="absolute inset-0 animate-pulse rounded-full bg-[#F59E0B] opacity-20"></div>
+<div class="w-10 h-10 rounded-full bg-[#F59E0B] flex items-center justify-center text-white shadow-lg shadow-amber-500/40 relative z-10 scale-100 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+</div>
+</div>
+<!-- Low Severity (Green) -->
+<div class="absolute bottom-1/3 left-1/2 group cursor-pointer">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-[#22C55E] flex items-center justify-center text-white shadow-lg shadow-emerald-500/40 relative z-10 scale-100 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side Quick Actions -->
+<div class="absolute right-6 top-24 flex flex-col gap-4">
+<div class="glass-panel bg-white/80 p-2 rounded-2xl flex flex-col gap-2 shadow-sm border border-white/20">
+<button class="p-3 rounded-xl hover:bg-emerald-50 transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="p-3 rounded-xl hover:bg-emerald-50 transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">remove</span>
+</button>
+</div>
+<button class="glass-panel bg-white/80 p-4 rounded-2xl shadow-sm border border-white/20 text-emerald-600 hover:text-emerald-700 transition-colors">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+</div>
+<!-- Floating Issue Card (Slide-up Detail) -->
+<div class="absolute bottom-28 left-0 right-0 px-6 flex justify-center pointer-events-none">
+<div class="max-w-xl w-full pointer-events-auto bg-surface-container-lowest glass-panel rounded-[28px] p-5 atmospheric-shadow border border-white/40 flex gap-5 items-center">
+<!-- Thumbnail -->
+<div class="w-32 h-32 flex-shrink-0 rounded-xl overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="close-up of a large asphalt pothole on a suburban street with cracked surrounding pavement" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI8Fuhqv9OGLfgO33yO4VdRAZ0nO0hVvifIg0e0qZpERg2Sdhp2usv_FEHEFnrLA2S2QvUantxmMAEntlmFjaL3cxh_RWBLjKXCbxggL5ui8LRG6IWjuZBdcdTZieG8faYZFCYYcn7997pmVEX84DwxLkyl8fWrqWHbJaaB5jLPgVvH0kP3YICXsxHvbr-RUf5J-fcr7rJAEo9umGgdNIEzlI-zbFZV4TAgRSxj-rBIBHuWIioSro6ubiBl3ZGUEfDfn6KZtI1qp5Y"/>
+</div>
+<!-- Content -->
+<div class="flex-grow">
+<div class="flex items-center gap-3 mb-1">
+<span class="px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container text-[10px] font-bold uppercase tracking-wider">Critical</span>
+<span class="text-xs text-on-surface-variant font-medium">2h ago</span>
+</div>
+<h3 class="text-xl font-extrabold text-on-surface leading-tight font-manrope">Pothole repair needed</h3>
+<p class="text-sm text-on-surface-variant line-clamp-2 mt-1 mb-4 leading-relaxed">
+                        Large crater forming on 5th and Main. Causing traffic delays and potential vehicle damage for commuters.
+                    </p>
+<div class="flex items-center justify-between gap-4">
+<div class="flex -space-x-2">
+<div class="w-7 h-7 rounded-full border-2 border-white bg-surface-container"></div>
+<div class="w-7 h-7 rounded-full border-2 border-white bg-surface-container"></div>
+<div class="w-7 h-7 rounded-full border-2 border-white bg-surface-container-high flex items-center justify-center text-[8px] font-bold text-on-surface-variant">+12</div>
+</div>
+<button class="btn-gradient px-6 py-2.5 rounded-full text-white font-bold text-sm shadow-md shadow-emerald-500/20 active:scale-95 transition-transform font-manrope">
+                            Resolve Issue
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex justify-center pb-safe md:hidden">
+<div class="bg-white/80 dark:bg-emerald-950/80 backdrop-blur-xl rounded-full mx-auto mb-6 w-max px-4 py-2 flex items-center gap-2 shadow-2xl">
+<button class="bg-emerald-500 text-white rounded-full p-3 shadow-lg shadow-emerald-500/40 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+</button>
+<button class="text-emerald-900/40 dark:text-emerald-100/40 p-3 hover:text-emerald-600 transition-all active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="dynamic_feed">dynamic_feed</span>
+</button>
+<button class="text-emerald-900/40 dark:text-emerald-100/40 p-3 hover:text-emerald-600 transition-all active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+</button>
+<button class="text-emerald-900/40 dark:text-emerald-100/40 p-3 hover:text-emerald-600 transition-all active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</nav>
+<!-- FAB (Contextual for Map - Create New Issue) -->
+<button class="fixed bottom-10 right-8 z-40 bg-primary text-on-primary w-14 h-14 rounded-full flex items-center justify-center shadow-xl hover:shadow-primary-container/40 transition-shadow">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</body></html>

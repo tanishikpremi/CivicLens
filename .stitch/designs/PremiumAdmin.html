@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Digital Ledger - CivicLens Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface": "#f0fdf4",
+              "tertiary-fixed-dim": "#ffb4a9",
+              "surface-variant": "#d9e6dd",
+              "surface-bright": "#f0fdf4",
+              "on-error": "#ffffff",
+              "outline-variant": "#bccbb9",
+              "primary": "#006e2f",
+              "on-tertiary": "#ffffff",
+              "inverse-surface": "#27332d",
+              "surface-container-low": "#eaf7ee",
+              "on-primary-fixed": "#002109",
+              "on-error-container": "#93000a",
+              "on-surface-variant": "#3d4a3d",
+              "secondary": "#2f6a3c",
+              "inverse-on-surface": "#e7f4eb",
+              "on-secondary": "#ffffff",
+              "background": "#f0fdf4",
+              "surface-container-high": "#deebe3",
+              "secondary-container": "#afefb4",
+              "outline": "#6d7b6c",
+              "inverse-primary": "#4ae176",
+              "on-secondary-container": "#346e40",
+              "tertiary-container": "#ff8b7c",
+              "on-primary": "#ffffff",
+              "surface-container": "#e4f1e8",
+              "error-container": "#ffdad6",
+              "on-secondary-fixed": "#002109",
+              "tertiary-fixed": "#ffdad5",
+              "on-primary-container": "#004b1e",
+              "secondary-fixed-dim": "#96d59d",
+              "primary-container": "#22c55e",
+              "tertiary": "#9e4036",
+              "on-secondary-fixed-variant": "#145126",
+              "error": "#ba1a1a",
+              "on-primary-fixed-variant": "#005321",
+              "secondary-fixed": "#b2f2b7",
+              "on-tertiary-fixed": "#410001",
+              "primary-fixed": "#6bff8f",
+              "primary-fixed-dim": "#4ae176",
+              "surface-container-highest": "#d9e6dd",
+              "surface-tint": "#006e2f",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#131e19",
+              "surface-dim": "#d0ddd5",
+              "on-tertiary-container": "#76231b",
+              "on-background": "#131e19",
+              "on-tertiary-fixed-variant": "#7f2a21"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #f0fdf4; color: #131e19; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .ledger-row:hover { background-color: #f0fdf4; transform: scale(1.005); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-6 h-16 w-full bg-white/70 backdrop-blur-xl shadow-emerald-500/5">
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-emerald-50/50 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-emerald-600">arrow_back</span>
+</button>
+<h1 class="font-manrope font-bold text-emerald-900 text-lg tracking-tight">The Digital Ledger</h1>
+</div>
+<div class="flex items-center gap-3">
+<div class="hidden md:flex flex-col items-end">
+<span class="font-label text-[10px] uppercase tracking-wider font-medium text-emerald-800/60">Administrator</span>
+<span class="text-sm font-semibold text-emerald-900">Admin User Profile</span>
+</div>
+<img alt="Admin" class="w-10 h-10 rounded-full border-2 border-white shadow-sm" data-alt="professional headshot of a middle-aged male administrator with a clean look, soft studio lighting, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVgphSZc4InVCIQujayKqtHm9bpWLaE_jHqmRwuzIShaGv2kW0H4xLvvrZsjNw36u3sY9IjysEFlZsD5_sOunvq0MlE4qXGbvxe1u-MM2RlZgqjO0EGPO_CPVF6DviJzV2O__2wziTpFLO0g8BqgHMaqxrLxoB3C9Hrc2kASS17Kr4UDG8uFled66UnCfrnXPWso_7zCg-rh6uGMjvEdLIO_MtpJT8EOMxpkwKPzz4N5_StdSH-nPsWyCdkfe2SvfawlZy0AoOXRBp"/>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 pt-12">
+<!-- Dashboard Overview Header -->
+<section class="mb-12">
+<h2 class="text-[3.5rem] font-bold leading-tight tracking-tight text-emerald-900 mb-2">
+                Welcome, Admin One
+            </h2>
+<p class="text-emerald-800/60 font-medium">System overview for CivicLens operational oversight.</p>
+</section>
+<!-- Stat Cards -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+<!-- Total Issues -->
+<div class="bg-white rounded-[28px] p-8 shadow-xl shadow-emerald-500/5 flex flex-col gap-4">
+<div class="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-emerald-600">dashboard</span>
+</div>
+<div>
+<span class="font-label text-[10px] uppercase tracking-widest font-semibold text-emerald-800/40">Total Issues</span>
+<div class="text-4xl font-bold text-emerald-950">142</div>
+</div>
+</div>
+<!-- Pending -->
+<div class="bg-white rounded-[28px] p-8 shadow-xl shadow-emerald-500/5 flex flex-col gap-4">
+<div class="w-12 h-12 rounded-2xl bg-amber-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-amber-600">work_outline</span>
+</div>
+<div>
+<span class="font-label text-[10px] uppercase tracking-widest font-semibold text-emerald-800/40">Pending</span>
+<div class="text-4xl font-bold text-emerald-950">48</div>
+</div>
+</div>
+<!-- Resolved -->
+<div class="bg-white rounded-[28px] p-8 shadow-xl shadow-emerald-500/5 flex flex-col gap-4">
+<div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-blue-600">check_circle</span>
+</div>
+<div>
+<span class="font-label text-[10px] uppercase tracking-widest font-semibold text-emerald-800/40">Resolved</span>
+<div class="text-4xl font-bold text-emerald-950">89</div>
+</div>
+</div>
+<!-- High Priority -->
+<div class="bg-gradient-to-br from-[#4ADE80] to-[#22C55E] rounded-[28px] p-8 shadow-xl shadow-emerald-500/20 flex flex-col gap-4 text-white">
+<div class="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">priority_high</span>
+</div>
+<div>
+<span class="font-label text-[10px] uppercase tracking-widest font-semibold text-white/70">High Priority</span>
+<div class="text-4xl font-bold text-white">5</div>
+</div>
+</div>
+</section>
+<!-- Data Grid -->
+<section class="bg-white rounded-[28px] p-8 shadow-xl shadow-emerald-500/5">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-xl font-bold text-emerald-950">Active Civic Reports</h3>
+<div class="flex gap-2">
+<button class="bg-emerald-50 text-emerald-700 font-semibold px-4 py-2 rounded-2xl text-sm transition-all hover:bg-emerald-100">Filter</button>
+<button class="bg-emerald-900 text-white font-semibold px-4 py-2 rounded-2xl text-sm transition-all hover:bg-emerald-800">Export Ledger</button>
+</div>
+</div>
+<div class="space-y-6">
+<!-- Row 1 -->
+<div class="ledger-row group flex flex-wrap md:flex-nowrap items-center justify-between gap-6 p-4 rounded-[24px] transition-all duration-300">
+<div class="flex items-center gap-4 flex-1">
+<img alt="Pothole Issue" class="w-16 h-16 rounded-2xl object-cover shadow-sm" data-alt="close-up photo of a deep pothole on a suburban asphalt road with water inside, natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHGu-Kr2JkLiLWzi5mYTLkhj04czS6gdOpZ2acfT4TVsRsGJwGGrijmb3APAHYI3Q1SVtCWMweviSPT0iJgukbqpDWbThDK6uSyozXLyeFOzCAoLBlO0A9KzU6sAkb7plFDx-tBjL3h1xURivJ9a3iqHZMHh5jSwostcmy_2BEtCC2OhkKWTTGH__agCvCGIrilquMPb3ENo3T-zexQJc2BWrEEDfgh-iw5zqMB5l4cPMFySRgPUcjHmgYY7WcBWkWbfRXZ0Zpceyi"/>
+<div>
+<h4 class="font-bold text-emerald-950 leading-tight">Structural Damage: Main St. Pothole</h4>
+<div class="flex gap-3 items-center mt-1">
+<span class="font-label text-[10px] tracking-wider text-emerald-800/40">ID: CV-9402</span>
+<span class="font-label text-[10px] tracking-wider text-emerald-800/40">40.7128° N, 74.0060° W</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="px-4 py-1.5 rounded-full bg-red-100 text-red-700 text-xs font-bold tracking-tight">Critical</span>
+<span class="px-4 py-1.5 rounded-full bg-amber-50 text-amber-700 text-xs font-bold tracking-tight uppercase">Pending</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-emerald-500/20 active:scale-95 transition-all">Resolve</button>
+<button class="bg-red-50 text-red-600 px-5 py-2.5 rounded-full text-sm font-bold active:scale-95 transition-all">Escalate</button>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="ledger-row group flex flex-wrap md:flex-nowrap items-center justify-between gap-6 p-4 rounded-[24px] transition-all duration-300">
+<div class="flex items-center gap-4 flex-1">
+<img alt="Graffiti Issue" class="w-16 h-16 rounded-2xl object-cover shadow-sm" data-alt="colorful graffiti art on a concrete city wall in an urban alleyway, vibrant morning sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsFvWPNXYzX7vMMxc14HnjdVbamEGCdWQtRcioWj2Y4_Ni_TJjKsyWYyQARlmxcmqpknGYo2deeRpsMt66xnn1N7wsG2kyivP-zNrmcuvkIfcrNYFb9R6XHJQo5ByZXrJZFoodWz7cICaJdmH0OJFHLIIV_XetAAOWr7RM7efGVcQsae37eUrG5dl8l4C62zFFpyFAVomC5rCY8nnmzQODSPhu4zvQe896RMUPa3jRU6-qge1f2BVZE9H_wjYMlPunNsgAOXKNVFU6"/>
+<div>
+<h4 class="font-bold text-emerald-950 leading-tight">Graffiti: Public Library Wall</h4>
+<div class="flex gap-3 items-center mt-1">
+<span class="font-label text-[10px] tracking-wider text-emerald-800/40">ID: CV-9405</span>
+<span class="font-label text-[10px] tracking-wider text-emerald-800/40">40.7306° N, 73.9352° W</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold tracking-tight">Low</span>
+<span class="px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold tracking-tight uppercase">Resolved</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-emerald-50 text-emerald-400 cursor-not-allowed px-5 py-2.5 rounded-full text-sm font-bold">Archive</button>
+<button class="bg-slate-50 text-slate-400 px-5 py-2.5 rounded-full text-sm font-bold">Details</button>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="ledger-row group flex flex-wrap md:flex-nowrap items-center justify-between gap-6 p-4 rounded-[24px] transition-all duration-300">
+<div class="flex items-center gap-4 flex-1">
+<img alt="Broken Street Light" class="w-16 h-16 rounded-2xl object-cover shadow-sm" data-alt="broken urban street light fixture against a deep blue twilight sky, dramatic low angle shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWd4dDyISCejmpqTbzkGaSnNGhwiCIquwJIkVR5N9w4iL_mpNVj3zncZm6BP5QZAtxHTQYg92ZZ6DcJ7SieZsK-xDwcyytIyKepxetRS6pV78d4sROBGT1inRaXpknHr2A2PZ1DP3i_D-35HoegdZOFrSWW-dkOcTntp2ri11PC5V7YUffLyIptUD6zxYTV7JJRrFOGF1KxuW3fGpftV1gfyx2dAEn663VIoIH1ipvC_0CJLv8ZIujGo60K_4BDqyma5f1u76BHFVn"/>
+<div>
+<h4 class="font-bold text-emerald-950 leading-tight">Utility: Broken Street Light #42</h4>
+<div class="flex gap-3 items-center mt-1">
+<span class="font-label text-[10px] tracking-wider text-emerald-800/40">ID: CV-9410</span>
+<span class="font-label text-[10px] tracking-wider text-emerald-800/40">40.7589° N, 73.9851° W</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="px-4 py-1.5 rounded-full bg-amber-100 text-amber-700 text-xs font-bold tracking-tight">Moderate</span>
+<span class="px-4 py-1.5 rounded-full bg-amber-50 text-amber-700 text-xs font-bold tracking-tight uppercase">Pending</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-emerald-500/20 active:scale-95 transition-all">Resolve</button>
+<button class="bg-red-50 text-red-600 px-5 py-2.5 rounded-full text-sm font-bold active:scale-95 transition-all">Escalate</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center px-4 py-3 bg-white/70 backdrop-blur-xl floating-pill rounded-[32px] max-w-md mx-auto mb-6 shadow-xl shadow-emerald-900/10 border-none">
+<a class="bg-gradient-to-br from-emerald-400 to-emerald-600 text-white rounded-full p-3 shadow-lg shadow-emerald-500/30 active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+</a>
+<a class="text-emerald-800/50 p-3 hover:text-emerald-600 transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">work_outline</span>
+</a>
+<a class="text-emerald-800/50 p-3 hover:text-emerald-600 transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">notifications</span>
+</a>
+<a class="text-emerald-800/50 p-3 hover:text-emerald-600 transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">person</span>
+</a>
+</nav>
+</body></html>

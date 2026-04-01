@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>CivicLens | Digital Ledger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;family=JetBrains+Mono:wght@400;700&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-background": "#191c1e",
+              "error": "#ba1a1a",
+              "on-primary": "#ffffff",
+              "inverse-surface": "#2e3132",
+              "on-secondary-fixed-variant": "#46464e",
+              "on-secondary": "#ffffff",
+              "on-surface": "#191c1e",
+              "surface-dim": "#d9dadc",
+              "primary-fixed": "#dbe1ff",
+              "outline-variant": "#c3c6d7",
+              "surface-container": "#edeef0",
+              "secondary-fixed-dim": "#c6c5cf",
+              "surface-container-high": "#e7e8ea",
+              "primary-container": "#2563eb",
+              "inverse-on-surface": "#f0f1f3",
+              "tertiary-fixed": "#e5e1e4",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed": "#00174b",
+              "on-primary-fixed-variant": "#003ea8",
+              "surface-tint": "#0053db",
+              "on-secondary-container": "#63646c",
+              "primary-fixed-dim": "#b4c5ff",
+              "on-tertiary-container": "#f3f0f3",
+              "secondary-container": "#e3e1ec",
+              "surface-container-highest": "#e1e2e4",
+              "on-surface-variant": "#434655",
+              "on-secondary-fixed": "#1a1b22",
+              "on-tertiary-fixed-variant": "#474649",
+              "outline": "#737686",
+              "surface-container-lowest": "#ffffff",
+              "inverse-primary": "#b4c5ff",
+              "surface-variant": "#e1e2e4",
+              "surface": "#f8f9fb",
+              "surface-bright": "#f8f9fb",
+              "on-error-container": "#93000a",
+              "secondary-fixed": "#e3e1ec",
+              "on-tertiary-fixed": "#1c1b1d",
+              "on-error": "#ffffff",
+              "secondary": "#5d5e66",
+              "tertiary": "#565557",
+              "error-container": "#ffdad6",
+              "tertiary-container": "#6e6d6f",
+              "background": "#f8f9fb",
+              "primary": "#004ac6",
+              "surface-container-low": "#f3f4f6",
+              "on-primary-container": "#eeefff",
+              "tertiary-fixed-dim": "#c8c6c8"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"],
+              "mono": ["JetBrains Mono"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .map-pulse::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: inherit;
+            opacity: 0.4;
+            z-index: -1;
+        }
+        .map-gradient-overlay {
+            background: linear-gradient(to bottom, rgba(248, 249, 251, 0.4) 0%, rgba(248, 249, 251, 0) 20%, rgba(248, 249, 251, 0) 80%, rgba(248, 249, 251, 0.6) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface overflow-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 h-14 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md rounded-lg mt-4 mx-4 border border-slate-200 dark:border-slate-800 shadow-[0px_12px_32px_-4px_rgba(67,70,85,0.08)]">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/40 bg-surface-container">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="close-up portrait of a young Indian man with a friendly expression in professional attire against a blurred office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPJgzT578fViEUh36WIlEQGF0w9Nsnt4wdk0RkBtHggMq2ZGk8rdNRRwtN2EtBrNCZ-lfC_GFJSzcu2969-i9-pml7qeX0k4pBWF20o3CLlaVmJY6OyxJh3kNATf6E8CMdN18t9vMOgorawSGDQS544kOsWx3dzfCGJmOkWybbui464-mdye5ZE2u3Ek4gUdjQRMeDMi2HqD0sbLFoqNX7snKIp2DAIszbnxjjzWCwnBXRmmc8E7kw9dhauS8J3e4YFwelCDrCTl36"/>
+</div>
+<span class="font-['Inter'] font-black tracking-tighter text-blue-700 dark:text-blue-400 text-lg">CivicLens</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors scale-95 active:duration-100">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<!-- Main Map Canvas -->
+<main class="relative w-full h-screen overflow-hidden bg-surface-dim">
+<!-- Mock Map Background -->
+<div class="absolute inset-0 z-0">
+<img alt="City Map" class="w-full h-full object-cover opacity-80 contrast-75 grayscale-[0.2]" data-alt="abstract minimalist map of New Delhi streets with clean grey and white geometric lines and subtle park areas in muted green" data-location="New Delhi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPeK29aqlp5cX-8AvOZtxDgLMgWns6xsYnyPDka2CcZL8MMBrIWYiNiKbrmMiF9NqBmxMVGW8qjSmpX5Ae_mUa2J_I80yZc0qSTtVvxP5ioTAY1hIqJq3uk_v--lSj9hA2lZAxHnguN4WvCcTPGvoxD09qCsIo0w5s_ENnjh8cskuO5TwVLjEX5bvvbwx0KauLPKepDPuCxGkbE14wgQ1o__lj6Yi3yVF320ORWoHsbIAYElc4_AJ7eo0fHbtvFl0JTxBnYQarvP4h"/>
+<div class="absolute inset-0 map-gradient-overlay pointer-events-none"></div>
+</div>
+<!-- Semantic Pins (Ledger Record Points) -->
+<!-- Red: Severity High -->
+<div class="absolute top-[40%] left-[30%] z-10">
+<div class="w-4 h-4 bg-error rounded-full shadow-lg border-2 border-white map-pulse"></div>
+</div>
+<!-- Yellow: Severity Medium -->
+<div class="absolute top-[55%] right-[25%] z-10">
+<div class="w-4 h-4 bg-amber-400 rounded-full shadow-lg border-2 border-white"></div>
+</div>
+<!-- Green: Severity Low -->
+<div class="absolute bottom-[40%] left-[45%] z-10">
+<div class="w-4 h-4 bg-emerald-500 rounded-full shadow-lg border-2 border-white"></div>
+</div>
+<!-- Selected Pin Highlight -->
+<div class="absolute top-[48%] left-[52%] z-20">
+<div class="relative">
+<div class="w-6 h-6 bg-error rounded-full shadow-xl border-2 border-white flex items-center justify-center animate-bounce">
+<span class="material-symbols-outlined text-[12px] text-white" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 bg-error rounded-full"></div>
+</div>
+</div>
+<!-- Floating Bottom Card (Selected Issue) -->
+<div class="absolute bottom-24 left-4 right-4 z-40">
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_12px_32px_-4px_rgba(67,70,85,0.08)] border border-slate-200 overflow-hidden flex flex-col md:flex-row max-w-lg mx-auto">
+<div class="w-full md:w-32 h-32 flex-shrink-0">
+<img alt="Pothole Issue" class="w-full h-full object-cover" data-alt="wide angle shot of a massive deep pothole filled with rainwater on a busy urban Indian street with traffic blurred in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfy2plQBSe28cbFL8b25gWfVh2mliBObdCIwy8N_ITtlnQiv5T0KrOPglYceIIFqj6Deb6V0DWzfxJWBolC9G7yjKIRmFx6dp_EPH4jOJ18k9zY3ag8xWP2iE9tOvdbOLq7w5JlYwUVGvGiTjgEhD5-MwVwj_5sSsCG8OOUQBNGPrbbiZdEJcCmdRuohQRVJNQ3W-S2ZRUg_jD1SDpV79l2nLeubmOyXawQzhIQ4aJgI2V0itCQ11cH_s5uGJy0UDYey9tH6RF7CTI"/>
+</div>
+<div class="p-4 flex flex-col justify-between flex-grow">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container text-[10px] font-bold tracking-wider uppercase font-label">Severity High</span>
+<span class="font-mono text-[10px] text-on-surface-variant">DL-NDLS-2023-8821</span>
+</div>
+<h3 class="font-headline font-bold text-base leading-tight tracking-tight text-on-surface mb-2">Massive Pothole near Connaught Place</h3>
+<div class="flex items-center gap-2 mb-3">
+<div class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-outline">person</span>
+</div>
+<span class="text-xs font-medium text-on-surface-variant">Rahul Sharma</span>
+<span class="text-xs text-outline">•</span>
+<span class="text-xs text-outline font-mono">2h ago</span>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-gradient-to-br from-primary to-primary-container text-white text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-transform active:translate-y-[1px]">
+<span>View Details</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Real-time Coordinate Bar -->
+<div class="absolute bottom-20 left-0 w-full px-6 flex justify-between pointer-events-none">
+<div class="bg-inverse-surface/90 text-inverse-on-surface px-3 py-1 rounded-full backdrop-blur-sm flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
+<span class="font-mono text-[10px] tracking-tight">28.6139° N, 77.2090° E • WARD 72, NDMC</span>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 py-3 pb-safe bg-white/80 dark:bg-slate-900/80 backdrop-blur-md rounded-t-xl border-t border-slate-200 dark:border-slate-800 shadow-[0px_-4px_16px_rgba(0,0,0,0.04)]">
+<!-- Map Tab (Active) -->
+<a class="flex flex-col items-center justify-center text-blue-700 dark:text-blue-400 font-bold bg-blue-50/50 dark:bg-blue-900/20 rounded-lg p-1 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="map" style="font-variation-settings: 'FILL' 1;">map</span>
+<span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-wider mt-1">Map</span>
+</a>
+<!-- Report Tab -->
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 p-1 hover:text-blue-600 dark:hover:text-blue-300" href="#">
+<div class="bg-primary shadow-lg shadow-primary/20 rounded-full w-10 h-10 flex items-center justify-center -mt-8 border-4 border-surface text-white scale-110 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+</div>
+<span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-wider mt-1">Report</span>
+</a>
+<!-- List Tab -->
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 p-1 hover:text-blue-600 dark:hover:text-blue-300" href="#">
+<span class="material-symbols-outlined" data-icon="format_list_bulleted">format_list_bulleted</span>
+<span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-wider mt-1">List</span>
+</a>
+</nav>
+</body></html>
